@@ -5,4 +5,25 @@
   margin: 0;
   padding: 0;
   font-family: var(--font-geist-sans);
+  color: #fff;
+}
+
+html,
+body {
+  background-color: #4d5565;
+}
+
+*::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #6a758b;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #555e6f;
 }
