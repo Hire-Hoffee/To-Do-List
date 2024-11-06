@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import * as SC from "./page.styles";
 import TasksList from "@/components/TasksList/TasksList";
 import TaskManage from "@/components/TaskManage/TaskManage";
@@ -24,6 +24,16 @@ export default function Home() {
     setSnackbarMessage("Память очищена");
     setOpen(true);
   };
+
+  useEffect(() => {
+    if (localStorage.getItem("auth") !== "true") {
+      window.location.href = "/auth";
+    }
+  }, []);
+
+  if (localStorage.getItem("auth") !== "true") {
+    return null;
+  }
 
   return (
     <SC.Container>
