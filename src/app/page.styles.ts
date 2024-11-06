@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { Button } from "@mui/material";
 
 export const Container = styled.div`
   background-color: #606a7d;
@@ -15,4 +16,10 @@ export const Container = styled.div`
 export const Title = styled.h1`
   color: #fff;
   margin-top: 20px;
+`;
+
+export const SaveButton = styled(Button)`
+  position: absolute;
+  top: 20px;
+  right: 20px;
 `;

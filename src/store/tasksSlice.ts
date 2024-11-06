@@ -33,9 +33,12 @@ export const tasksSlice = createSlice({
     setTab(state, action: PayloadAction<"active" | "completed" | "deleted" | null>) {
       state.tab = action.payload;
     },
+    setTasks(state, action: PayloadAction<TTask[]>) {
+      state.tasksList = action.payload;
+    },
   },
 });
 
-export const { createTask, clearAllTasks, setTab, setTaskStatus } = tasksSlice.actions;
+export const { createTask, clearAllTasks, setTab, setTaskStatus, setTasks } = tasksSlice.actions;
 
 export default tasksSlice.reducer;
