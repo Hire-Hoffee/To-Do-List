@@ -7,6 +7,7 @@ import InputTask from "./InputTask";
 import { useForm } from "react-hook-form";
 import { useAppDispatch } from "@/store";
 import { createTask, clearAllTasks } from "@/store/tasksSlice";
+import { TTask } from "@/types";
 
 function TaskManage() {
   const { control, handleSubmit, getValues, reset } = useForm<{ text: string }>({
@@ -17,7 +18,7 @@ function TaskManage() {
 
   const handleCreateTask = () => {
     const { text } = getValues();
-    const newTask = { id: Date.now(), text: text, completed: false, deleted: false };
+    const newTask: TTask = { id: Date.now(), text: text, status: "active" };
 
     dispatch(createTask(newTask));
     reset();

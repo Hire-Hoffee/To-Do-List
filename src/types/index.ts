@@ -1,8 +1,7 @@
 type TTask = {
   id: number;
   text: string;
-  completed: boolean;
-  deleted: boolean;
+  status: "active" | "completed" | "deleted";
 };
 
 export type { TTask };
