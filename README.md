@@ -1,5 +1,7 @@
 # Техническое задание на позицию: Junior Frontend Developer.
 
+ТЗ - https://docs.google.com/document/d/16-tba8zzJla7bEgbAo96nXCpdT2HA-oQ6XI9g6Mxu64/edit?tab=t.0
+
 ### Задание:
 
 Реализовать приложение To-do List. (пример приложения в фото ниже)
