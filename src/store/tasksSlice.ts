@@ -4,26 +4,7 @@ import { TTask } from "../types";
 const initialState: {
   tasksList: TTask[];
 } = {
-  tasksList: [
-    {
-      id: 1,
-      text: "Test Task",
-      completed: false,
-      deleted: false,
-    },
-    {
-      id: 2,
-      text: "Test Task 2",
-      completed: false,
-      deleted: false,
-    },
-    {
-      id: 3,
-      text: "Test Task 3",
-      completed: false,
-      deleted: false,
-    },
-  ],
+  tasksList: [],
 };
 
 export const tasksSlice = createSlice({
@@ -31,11 +12,14 @@ export const tasksSlice = createSlice({
   initialState,
   reducers: {
     createTask(state, action: PayloadAction<TTask>) {
-      state.tasksList.push(action.payload);
+      state.tasksList = [action.payload, ...state.tasksList];
+    },
+    clearAllTasks(state) {
+      state.tasksList = [];
     },
   },
 });
 
-export const { createTask } = tasksSlice.actions;
+export const { createTask, clearAllTasks } = tasksSlice.actions;
 
 export default tasksSlice.reducer;
