@@ -3,11 +3,16 @@ import * as SC from "./Task.styles";
 import { Box, Button, Typography } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import DoneIcon from "@mui/icons-material/Done";
+import type { TTask } from "../../types";
 
-function Task() {
+type Props = {
+  task: TTask;
+};
+
+function Task({ task }: Props) {
   return (
     <SC.Container>
-      <Typography>Task</Typography>
+      <Typography>{task.text || "Lorem"}</Typography>
       <Box>
         <Button>
           <DoneIcon />
