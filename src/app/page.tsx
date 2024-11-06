@@ -25,15 +25,16 @@ export default function Home() {
     setOpen(true);
   };
 
+  const handleExit = () => {
+    localStorage.removeItem("auth");
+    window.location.href = "/auth";
+  };
+
   useEffect(() => {
     if (localStorage.getItem("auth") !== "true") {
       window.location.href = "/auth";
     }
   }, []);
-
-  if (localStorage.getItem("auth") !== "true") {
-    return null;
-  }
 
   return (
     <SC.Container>
@@ -43,6 +44,9 @@ export default function Home() {
         </Button>
         <Button variant="contained" color="error" onClick={handleClearTasksList}>
           Очистить память
+        </Button>
+        <Button variant="contained" color="error" onClick={handleExit}>
+          Выйти
         </Button>
       </SC.ButtonsContainer>
       <Snackbar
